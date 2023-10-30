@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="stylesheet" href="node_modules/@baloise/design-system-css/css/baloise-design-system.css" />
+    <script
+      type="module"
+      src="node_modules/@baloise/design-system-components/dist/design-system-components/design-system-components.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="node_modules/@baloise/design-system-components/dist/design-system-components/design-system-components.js"
+    ></script>
+    <script
+      nomodule
+      src="node_modules/@baloise/design-system-components/dist/components/bal-modal.js"
+    ></script>
+
+
+  </head>
+  <body>
+    <bal-doc-app>
+      <main class="container py-medium">
+        <section>
+          <bal-popover id="popover" data-testid="popover">
+            <bal-button
+              bal-popover-trigger
+              id="popover-trigger"
+              data-testid="popover-trigger"
+              aria-haspopup="true"
+              aria-controls="popover-menu"
+            >
+              Trigger Popover
+            </bal-button>
+            <bal-popover-content>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </bal-popover-content>
+          </bal-popover>
+        </section>
+        <script>
+          var popover = document.getElementById('popover')
+          var popoverTrigger = document.getElementById('popover-trigger')
+
+          popoverTrigger.addEventListener('click', function (event) {
+            popover.toggle()
+          })
+        </script>
+
+        <section>
+          <bal-popover id="popover-arrow" data-testid="popover" arrow backdrop position="right">
+            <bal-button
+              bal-popover-trigger
+              id="popover-arrow-trigger"
+              data-testid="popover-arrow-trigger"
+              aria-haspopup="true"
+              aria-controls="popover-menu"
+            >
+              Trigger Arrow Popover
+            </bal-button>
+            <bal-popover-content>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </bal-popover-content>
+          </bal-popover>
+        </section>
+        <script>
+          var popoverArrow = document.getElementById('popover-arrow')
+          var triggerArrow = document.getElementById('popover-arrow-trigger')
+
+          triggerArrow.addEventListener('click', function (event) {
+            popoverArrow.toggle()
+          })
+        </script>
+
+        <section>
+          <bal-popover id="popover-tooltip" data-testid="popover-tooltip" arrow hover tooltip>
+            <bal-button
+              bal-popover-trigger
+              id="popover-tooltip-trigger"
+              data-testid="popover-tooltip-trigger"
+              aria-haspopup="true"
+              aria-controls="popover-menu"
+            >
+              Tooltip
+            </bal-button>
+            <bal-popover-content>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </bal-popover-content>
+          </bal-popover>
+        </section>
+      </main>
+    </bal-doc-app>
+
+
+    <div>
+        <div class="container is-compact mb-xx-small0">
+            <bal-card>
+                <bal-card-title>BaloiseCombi</bal-card-title>
+                <bal-card-subtitle>Police number 70/2.937.458</bal-card-subtitle>
+                <bal-card-content>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</bal-card-content>
+                <bal-card-actions position="right">
+                    <bal-button>Main Action</bal-button>
+                    <bal-button color="info" outlined>Secondary Action</bal-button>
+                </bal-card-actions>
+            </bal-card>
+        </div>
+    
+        <bal-sheet container-size="compact">
+            <bal-stack layout="vertical" space="small" class="is-hidden-tablet">
+                <bal-button expanded>Continue with 1'234 CHF</bal-button>
+                <bal-button expanded color="info">Back</bal-button>
+            </bal-stack>
+            <bal-stack class="is-hidden-mobile">
+                <bal-heading level="p" visual-level="h4">1'234 CHF</bal-heading>
+                <bal-content>
+                    <p class="has-text-blue-light-text is-size-small m-none is-flex-grow-1">Lorem ipsum dolor</p>
+                </bal-content>
+                <bal-button-group>
+                    <bal-button color="info">Back</bal-button>
+                    <bal-button>Next</bal-button>
+                </bal-button-group>
+            </bal-stack>
+        </bal-sheet>
+    </div>
+
+    <bal-hint class="mt-xx-large">
+        <bal-hint-title>Spider-Man</bal-hint-title>
+        <bal-hint-text>
+            Spider-Man is a fictional superhero created by writer-editor Stan Lee and writer-artist Steve Ditko. He first appeared in the anthology comic book Amazing Fantasy #15
+            (August 1962) in the Silver Age of Comic Books. He appears in American comic books published by Marvel Comics, as well as in a number of movies, television shows, and
+            video game adaptations set in the Marvel Universe.
+        </bal-hint-text>
+    </bal-hint>
+
+    <bal-icon color="primary" name="info-circle" size="large"></bal-icon>
+    <bal-badge color="success" icon="check"></bal-badge>
+
+    <div class="container is-compact">
+      <bal-carousel controls="dots" interface="image">
+        <bal-carousel-item src="https://fastly.picsum.photos/id/626/1280/720.jpg?hmac=pHWhzQeCr1Zq8_NquZJ51qZ0xXa4psCZpoeJbaUbkWM">
+        </bal-carousel-item>
+        <bal-carousel-item src="https://fastly.picsum.photos/id/921/1280/720.jpg?hmac=_kfenyYI38K4FYrzavn01cZUPqpu1pbn2OYNhrGqwvg">
+        </bal-carousel-item>
+        <bal-carousel-item src="https://fastly.picsum.photos/id/235/1280/720.jpg?hmac=MBlYf-BNbNbdxmF-qCtt9eNsT1SKJy_1JCHeLDRHYEw">
+        </bal-carousel-item>          <bal-carousel-item src="https://fastly.picsum.photos/id/626/1280/720.jpg?hmac=pHWhzQeCr1Zq8_NquZJ51qZ0xXa4psCZpoeJbaUbkWM">
+        </bal-carousel-item>
+        <bal-carousel-item src="https://fastly.picsum.photos/id/921/1280/720.jpg?hmac=_kfenyYI38K4FYrzavn01cZUPqpu1pbn2OYNhrGqwvg">
+        </bal-carousel-item>
+        <bal-carousel-item src="https://fastly.picsum.photos/id/235/1280/720.jpg?hmac=MBlYf-BNbNbdxmF-qCtt9eNsT1SKJy_1JCHeLDRHYEw">
+        </bal-carousel-item>          <bal-carousel-item src="https://fastly.picsum.photos/id/626/1280/720.jpg?hmac=pHWhzQeCr1Zq8_NquZJ51qZ0xXa4psCZpoeJbaUbkWM">
+        </bal-carousel-item>
+        <bal-carousel-item src="https://fastly.picsum.photos/id/921/1280/720.jpg?hmac=_kfenyYI38K4FYrzavn01cZUPqpu1pbn2OYNhrGqwvg">
+        </bal-carousel-item>
+        <bal-carousel-item src="https://fastly.picsum.photos/id/235/1280/720.jpg?hmac=MBlYf-BNbNbdxmF-qCtt9eNsT1SKJy_1JCHeLDRHYEw">
+        </bal-carousel-item>          <bal-carousel-item src="https://fastly.picsum.photos/id/626/1280/720.jpg?hmac=pHWhzQeCr1Zq8_NquZJ51qZ0xXa4psCZpoeJbaUbkWM">
+        </bal-carousel-item>
+        <bal-carousel-item src="https://fastly.picsum.photos/id/921/1280/720.jpg?hmac=_kfenyYI38K4FYrzavn01cZUPqpu1pbn2OYNhrGqwvg">
+        </bal-carousel-item>
+        <bal-carousel-item src="https://fastly.picsum.photos/id/235/1280/720.jpg?hmac=MBlYf-BNbNbdxmF-qCtt9eNsT1SKJy_1JCHeLDRHYEw">
+        </bal-carousel-item>          <bal-carousel-item src="https://fastly.picsum.photos/id/626/1280/720.jpg?hmac=pHWhzQeCr1Zq8_NquZJ51qZ0xXa4psCZpoeJbaUbkWM">
+        </bal-carousel-item>
+        <bal-carousel-item src="https://fastly.picsum.photos/id/921/1280/720.jpg?hmac=_kfenyYI38K4FYrzavn01cZUPqpu1pbn2OYNhrGqwvg">
+        </bal-carousel-item>
+        <bal-carousel-item src="https://fastly.picsum.photos/id/235/1280/720.jpg?hmac=MBlYf-BNbNbdxmF-qCtt9eNsT1SKJy_1JCHeLDRHYEw">
+        </bal-carousel-item>          <bal-carousel-item src="https://fastly.picsum.photos/id/626/1280/720.jpg?hmac=pHWhzQeCr1Zq8_NquZJ51qZ0xXa4psCZpoeJbaUbkWM">
+        </bal-carousel-item>
+        <bal-carousel-item src="https://fastly.picsum.photos/id/921/1280/720.jpg?hmac=_kfenyYI38K4FYrzavn01cZUPqpu1pbn2OYNhrGqwvg">
+        </bal-carousel-item>
+        <bal-carousel-item src="https://fastly.picsum.photos/id/235/1280/720.jpg?hmac=MBlYf-BNbNbdxmF-qCtt9eNsT1SKJy_1JCHeLDRHYEw">
+        </bal-carousel-item>          <bal-carousel-item src="https://fastly.picsum.photos/id/626/1280/720.jpg?hmac=pHWhzQeCr1Zq8_NquZJ51qZ0xXa4psCZpoeJbaUbkWM">
+        </bal-carousel-item>
+        <bal-carousel-item src="https://fastly.picsum.photos/id/921/1280/720.jpg?hmac=_kfenyYI38K4FYrzavn01cZUPqpu1pbn2OYNhrGqwvg">
+        </bal-carousel-item>
+        <bal-carousel-item src="https://fastly.picsum.photos/id/235/1280/720.jpg?hmac=MBlYf-BNbNbdxmF-qCtt9eNsT1SKJy_1JCHeLDRHYEw">
+        </bal-carousel-item>          <bal-carousel-item src="https://fastly.picsum.photos/id/626/1280/720.jpg?hmac=pHWhzQeCr1Zq8_NquZJ51qZ0xXa4psCZpoeJbaUbkWM">
+        </bal-carousel-item>
+        <bal-carousel-item src="https://fastly.picsum.photos/id/921/1280/720.jpg?hmac=_kfenyYI38K4FYrzavn01cZUPqpu1pbn2OYNhrGqwvg">
+        </bal-carousel-item>
+        <bal-carousel-item src="https://fastly.picsum.photos/id/235/1280/720.jpg?hmac=MBlYf-BNbNbdxmF-qCtt9eNsT1SKJy_1JCHeLDRHYEw">
+        </bal-carousel-item>          <bal-carousel-item src="https://fastly.picsum.photos/id/626/1280/720.jpg?hmac=pHWhzQeCr1Zq8_NquZJ51qZ0xXa4psCZpoeJbaUbkWM">
+        </bal-carousel-item>
+        <bal-carousel-item src="https://fastly.picsum.photos/id/921/1280/720.jpg?hmac=_kfenyYI38K4FYrzavn01cZUPqpu1pbn2OYNhrGqwvg">
+        </bal-carousel-item>
+        <bal-carousel-item src="https://fastly.picsum.photos/id/235/1280/720.jpg?hmac=MBlYf-BNbNbdxmF-qCtt9eNsT1SKJy_1JCHeLDRHYEw">
+        </bal-carousel-item>          <bal-carousel-item src="https://fastly.picsum.photos/id/626/1280/720.jpg?hmac=pHWhzQeCr1Zq8_NquZJ51qZ0xXa4psCZpoeJbaUbkWM">
+        </bal-carousel-item>
+        <bal-carousel-item src="https://fastly.picsum.photos/id/921/1280/720.jpg?hmac=_kfenyYI38K4FYrzavn01cZUPqpu1pbn2OYNhrGqwvg">
+        </bal-carousel-item>
+        <bal-carousel-item src="https://fastly.picsum.photos/id/235/1280/720.jpg?hmac=MBlYf-BNbNbdxmF-qCtt9eNsT1SKJy_1JCHeLDRHYEw">
+        </bal-carousel-item>          <bal-carousel-item src="https://fastly.picsum.photos/id/626/1280/720.jpg?hmac=pHWhzQeCr1Zq8_NquZJ51qZ0xXa4psCZpoeJbaUbkWM">
+        </bal-carousel-item>
+        <bal-carousel-item src="https://fastly.picsum.photos/id/921/1280/720.jpg?hmac=_kfenyYI38K4FYrzavn01cZUPqpu1pbn2OYNhrGqwvg">
+        </bal-carousel-item>
+        <bal-carousel-item src="https://fastly.picsum.photos/id/235/1280/720.jpg?hmac=MBlYf-BNbNbdxmF-qCtt9eNsT1SKJy_1JCHeLDRHYEw">
+        </bal-carousel-item>
+          <bal-carousel-item src="https://fastly.picsum.photos/id/626/1280/720.jpg?hmac=pHWhzQeCr1Zq8_NquZJ51qZ0xXa4psCZpoeJbaUbkWM">
+          </bal-carousel-item>
+          <bal-carousel-item src="https://fastly.picsum.photos/id/921/1280/720.jpg?hmac=_kfenyYI38K4FYrzavn01cZUPqpu1pbn2OYNhrGqwvg">
+          </bal-carousel-item>
+          <bal-carousel-item src="https://fastly.picsum.photos/id/235/1280/720.jpg?hmac=MBlYf-BNbNbdxmF-qCtt9eNsT1SKJy_1JCHeLDRHYEw">
+          </bal-carousel-item>
+      </bal-carousel>
+  </div>
+
+
+
+  <div class="container">
+    <bal-carousel controls="tabs" controls-sticky interface="card" scroll-y>
+        <bal-carousel-item label="ECO">
+            <bal-card style="width: 100%">
+                <bal-card-title>Title ECO</bal-card-title>
+                <bal-card-content>Content Content Content</bal-card-content>
+            </bal-card>
+        </bal-carousel-item>
+        <bal-carousel-item label="SMART">
+            <bal-card style="width: 100%">
+                <bal-card-title>Title SMART</bal-card-title>
+                <bal-card-content>Content</bal-card-content>
+            </bal-card>
+        </bal-carousel-item>
+        <bal-carousel-item label="TOP">
+            <bal-card style="width: 100%">
+                <bal-card-title>Title TOP</bal-card-title>
+                <bal-card-content>Content</bal-card-content>
+            </bal-card>
+        </bal-carousel-item>
+    </bal-carousel>
+</div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+  </body>
+
+  

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Baloise Design System</title>
+        <link rel="stylesheet" href="node_modules/@baloise/design-system-css/css/baloise-design-system.css" />
+        <script
+          type="module"
+          src="node_modules/@baloise/design-system-components/dist/design-system-components/design-system-components.esm.js"
+        ></script>
+        <script
+          nomodule
+          src="node_modules/@baloise/design-system-components/dist/design-system-components/design-system-components.js"
+        ></script>
+
+      </head>
+      <body>
+      <bal-doc-app>
+      <main class="container py-medium">
+        <h2 class="title is-size-xx-large">Basic</h2>
+        <section>
+          <bal-button id="toast-default" color="success" data-testid="toast">Show success Toast</bal-button>
+          <bal-button id="toast-warning" color="warning" data-testid="toast-warning">Show warning Toast</bal-button>
+        </section>
+        <script>
+          document.getElementById('toast-default').onclick = function () {
+            balToastController.create({
+              message: 'Hi I am a default Toast! Hi I am a default Toast!',
+              color: 'success',
+              duration: 1000,
+            })
+          }
+          document.getElementById('toast-warning').onclick = function () {
+            const toast = balToastController.create({ message: 'Warning!', color: 'warning' })
+            setTimeout(() => toast.close, 2000)
+          }
+        </script>
+      </main>
+    </bal-doc-app>
+      </body>
+
+</html>

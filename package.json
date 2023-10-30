@@ -1,0 +1,26 @@
+{
+  "name": "baloise_test_v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "npm run copy:assets",
+    "copy:fonts": "copyfiles --flat node_modules/@baloise/design-system-fonts/lib/* src/assets/fonts",
+    "copy:assets": "npm run copy:favicons",
+    "copy:favicons": "copyfiles --flat node_modules/@baloise/design-system-favicons/icons/primary/* src/assets/favicons",
+    "start": "http-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@baloise/design-system-components": "^14.1.0",
+    "@baloise/design-system-css": "^14.1.0",
+    "@baloise/design-system-icons": "^14.1.0"
+  },
+  "devDependencies": {
+    "@baloise/design-system-favicons": "^14.1.0",
+    "copyfiles": "^2.4.1",
+    "http-server": "^14.1.1"
+  }
+}
