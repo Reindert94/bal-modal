@@ -16,3 +16,12 @@
 
     <script src="path/to/alpine.js"></script>
 </form>
+
+
+class YourModelForm(forms.ModelForm):
+    class Meta:
+        model = YourModel
+        fields = ['make', 'fuel', 'model']
+        widgets = {
+            'fuel': forms.RadioSelect(attrs={'x-data': '{"selectedFuel": null}', 'x-on:click': 'selectedFuel = $event.target.value'}),
+        }
