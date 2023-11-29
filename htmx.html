@@ -25,3 +25,35 @@ class YourModelForm(forms.ModelForm):
         widgets = {
             'fuel': forms.RadioSelect(attrs={'x-data': '{"selectedFuel": null}', 'x-on:click': 'selectedFuel = $event.target.value'}),
         }
+
+<!-- your_template.html -->
+<form method="post" hx-post="{% url 'your_form_submission_view' %}" hx-headers="{ 'X-CSRFToken': '{{ csrf_token }}' }">
+    {% csrf_token %}
+    <div x-data="{ selectedFuel: '{{ form.initial.fuel }}' }">
+        {{ form.fuel }}
+        <input type="hidden" name="selected_fuel" x-model="selectedFuel">
+    </div>
+    <div>
+        <label>Make</label>
+        {{ form.make }}
+    </div>
+    <div>
+        <label>Model</label>
+        {{ form.model }}
+    </div>
+    <button type="button" x-on:click="submitForm">Submit</button>
+
+    <script src="path/to/alpine.js"></script>
+</form>
+
+
+<script>
+    function submitForm() {
+        var selectedValue = Alpine.data['your-alpine-data-id'].selectedFuel;
+        console.log("Selected Fuel:", selectedValue);
+
+        // Perform your HTMX request with the selectedValue
+        // For example, you might want to submit the form asynchronously using HTMX here.
+        // You can customize this part based on your specific use case.
+    }
+</script>
