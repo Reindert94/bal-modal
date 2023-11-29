@@ -57,3 +57,32 @@ class YourModelForm(forms.ModelForm):
         // You can customize this part based on your specific use case.
     }
 </script>
+
+
+      <div 
+      hx-trigger="click delay:100ms"
+      hx-get="{% url 'projects:test_view' %}"
+      hx-target="#dignes"
+      hx-include="[name='htmx_input']">
+
+        <h1>Test</h1>
+        {% bootstrap_field form.ground_test %}
+        <input type="hidden" name="htmx_input">
+
+      </div>
+      <div id="dignes"></div>
+
+      <script>
+        $(document).ready(function() {
+          // Global click event listener
+          $(document).on('click', function() {
+            // Get the value of the currently checked radio button in the group
+            var selectedValue = $('input[type="radio"][name="ground_test"]:checked').val();
+            console.log(selectedValue); // Log the selected value
+            $('input[name="htmx_input"]').val(selectedValue);            // Update the hx-params attribute of the HTMX element
+          });
+        });
+      </script>
+      
+      
+
