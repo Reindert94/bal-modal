@@ -1,0 +1,18 @@
+<form method="post" hx-post="{% url 'your_form_submission_view' %}">
+    {% csrf_token %}
+    <div x-data="{}">
+        {{ form.fuel }}
+        <input type="hidden" name="selected_fuel" x-model="selectedFuel">
+    </div>
+    <div>
+        <label>Make</label>
+        {{ form.make }}
+    </div>
+    <div>
+        <label>Model</label>
+        {{ form.model }}
+    </div>
+    <button type="submit">Submit</button>
+
+    <script src="path/to/alpine.js"></script>
+</form>
