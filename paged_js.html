@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Paged.js styles */
+    @page {
+      size: 8.27in 11.69in; /* A4 size */
+      margin: 1in; /* Default margins for all pages */
+    }
+
+    /* Remove margins for the first page (where full-page image is displayed) */
+    @page :first {
+      margin: 0;
+    }
+
+    /* Your custom styles */
+    figure.full-page {
+      height: 100%; /* Make the figure fill the entire height of the page */
+      width: 100%;  /* Make the figure fill the entire width of the page */
+      float: top;
+      float-reference: page;
+      margin: 0; /* Remove margins for full-page images */
+    }
+
+    figure.full-page img {
+      max-width: 100%; /* Set the maximum width to 100% of the container */
+      max-height: 100%; /* Set the maximum height to 100% of the container */
+    }
+  </style>
+  <script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>
+</head>
+<body>
+  <!-- Content for the first page (where full-page image is displayed) -->
+  <div class="full-page">
+    <img src="your-image.jpg" alt="Your Image">
+  </div>
+
+  <!-- Other content goes here (with default margins) -->
+  <p>Other content on subsequent pages.</p>
+</body>
+</html>
